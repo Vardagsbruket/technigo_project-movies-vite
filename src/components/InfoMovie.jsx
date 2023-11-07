@@ -21,10 +21,16 @@ export const InfoMovie = () => {
     handleFetchData();
   }, []);
 
+  const backdropIMG = `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`;
+  const posterIMG = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
+
   return (
     <>
+      <img src={backdropIMG} alt="Backdrop for movie" />
+      <img src={posterIMG} alt="Poster for movie" />
       <p>Name: {movie.title}</p>
       <p>Release date: {movie.release_date}</p>
+      <p>{movie.overview}</p>
     </>
   );
 };
