@@ -4,9 +4,14 @@ export const ListMovies = ({ listMovies }) => {
   return (
     <>
       {listMovies.map((movie) => (
-        <li key={movie.id}>
-          <Link to={`/${movie.id}`}>{movie.title}</Link>
-        </li>
+        <div key={movie.id} className="containerListMovies">
+          <Link to={`/${movie.id}`}>
+            <img
+              src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+              alt="Movie poster"
+            />
+          </Link>
+        </div>
       ))}
     </>
   );

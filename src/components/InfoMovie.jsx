@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { NavBar } from "./NavBar";
 
 export const InfoMovie = () => {
   const { movieId } = useParams();
@@ -26,11 +27,19 @@ export const InfoMovie = () => {
 
   return (
     <>
-      <img src={backdropIMG} alt="Backdrop for movie" />
-      <img src={posterIMG} alt="Poster for movie" />
-      <p>Name: {movie.title}</p>
-      <p>Release date: {movie.release_date}</p>
-      <p>{movie.overview}</p>
+      <div
+        className="background"
+        style={{ backgroundImage: `url(${backdropIMG})` }}
+      >
+        <div className="infoInnerContainer">
+          <img src={posterIMG} alt="Poster for movie" className="infoPoster" />
+          <div className="details">
+            <h1>{movie.title}</h1>
+            <p>Release date: {movie.release_date}</p>
+            <p>{movie.overview}</p>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

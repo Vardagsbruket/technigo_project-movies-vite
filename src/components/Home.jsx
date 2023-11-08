@@ -21,7 +21,9 @@ export const Home = () => {
       <div>
         <h1>Popular Movies</h1>
       </div>
-      <ListMovies listMovies={listMovies} />
+      <div className="containerListMovies">
+        <ListMovies listMovies={listMovies} />
+      </div>
     </>
   );
 };

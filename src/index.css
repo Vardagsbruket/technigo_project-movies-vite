@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+body {
+  background-color: black;
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+.containerListMovies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 5px;
+  justify-content: center;
+}
+.infoInnerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 50px;
+}
+.background {
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100vh;
+}
+.details {
+  display: block;
+  margin-left: 20px;
+  color: white;
+  max-width: 400px;
+  width: 100%;
+}
+.navBar {
+  position: absolute;
+  display: inline-flex;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  left: 50px;
+  top: 10px;
+  z-index: 10;
+}
+nav ul {
+  list-style: none;
+}
