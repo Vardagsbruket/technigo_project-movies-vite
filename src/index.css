@@ -57,3 +57,9 @@ body {
 nav ul {
   list-style: none;
 }
+.dropdown {
+  display: flex;
+  gap: 10px;
+  align-content: center;
+  justify-content: center;
+}

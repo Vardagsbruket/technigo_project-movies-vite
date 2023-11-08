@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { NavBar } from "./NavBar";
 
 export const InfoMovie = () => {
   const { movieId } = useParams();

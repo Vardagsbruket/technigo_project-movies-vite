@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-export const ListMovies = ({ listMovies }) => {
+export const ListMovies = ({ movieList }) => {
   return (
     <>
-      {listMovies.map((movie) => (
+      {movieList.map((movie) => (
         <div key={movie.id} className="containerListMovies">
           <Link to={`/${movie.id}`}>
             <img
