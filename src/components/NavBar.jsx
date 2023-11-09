@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { DropdownMenu } from "./DropdownMenu";
 
 export const NavBar = () => {
   return (

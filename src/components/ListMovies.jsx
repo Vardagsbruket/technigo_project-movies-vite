@@ -21,7 +21,7 @@ export const ListMovies = ({ movieList }) => {
               {hoveredMovie === movie.id && (
                 <div className="additionalInfo">
                   <h1>{movie.title}</h1>
-                  <p>{movie.release_date}</p>
+                  <p>Release date: {movie.release_date}</p>
                 </div>
               )}
             </div>

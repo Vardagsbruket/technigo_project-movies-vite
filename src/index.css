@@ -11,10 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 body {
   background-color: black;
   color: white;
-  margin: auto;
   text-align: center;
 }
 .containerListMovies {
@@ -66,6 +75,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
+  margin: 0;
 }
 .background::before {
   content: "";
@@ -75,7 +85,7 @@ body {
   right: 0;
   bottom: 0;
   background-image: linear-gradient(
-    rgba(0, 0, 0, 0) 70%,
+    rgba(0, 0, 0, 0.5) 70%,
     rgb(0, 0, 0, 0.7) 100%
   );
   z-index: 1;
@@ -86,7 +96,7 @@ body {
   color: white;
   max-width: 400px;
   width: 100%;
-  text-align: start;
+  text-align: left;
 }
 .navBar {
   position: absolute;
@@ -96,7 +106,7 @@ body {
   align-items: center;
   left: 50px;
   top: 10px;
-  z-index: 10;
+  z-index: 3;
 }
 nav ul {
   list-style: none;
