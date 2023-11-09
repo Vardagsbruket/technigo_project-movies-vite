@@ -6,8 +6,8 @@ export const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const APIKey = "1e81568b63357a1819899eca74697016";
 
-  const min_date = "2023-11-15";
-  const max_date = "2023-12-31";
+  const min_date = "2012-11-15";
+  const max_date = "2013-12-31";
 
   const [selectedMovieList, setSelectedMovieList] = useState("");
 
@@ -21,13 +21,13 @@ export const Home = () => {
       let apiUrl = "";
 
       switch (selectedMovieList) {
-        case "upcoming":
-          apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte=${min_date}&release_date.lte=${max_date}`;
+        case "Upcoming":
+          apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&primary_release_date.gte=${min_date}&primary_release_date.lte=${max_date}`;
           break;
-        case "popular":
+        case "Popular":
           apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=en-US&page=1`;
           break;
-        case "top-rated":
+        case "Top-rated":
           apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=vote_average.desc&without_genres=99,10755&vote_count.gte=200`;
           break;
         default:
@@ -37,6 +37,7 @@ export const Home = () => {
       const response = await fetch(apiUrl);
       const data = await response.json();
       setMovieList(data.results);
+      console.log(data);
       setIsLoading(false);
     };
 
@@ -51,9 +52,9 @@ export const Home = () => {
         </label>
         <select value={selectedMovieList} onChange={selectMovieList}>
           <option value="">Select Movie List</option>
-          <option value="upcoming">Upcoming Movies</option>
-          <option value="popular">Popular Movies</option>
-          <option value="top-rated">Top Rated Movies</option>
+          <option value="Upcoming">Upcoming Movies</option>
+          <option value="Popular">Popular Movies</option>
+          <option value="Top-rated">Top Rated Movies</option>
         </select>
       </div>
       <div>

@@ -36,6 +36,7 @@ export const InfoMovie = () => {
           <img src={posterIMG} alt="Poster for movie" className="infoPoster" />
           <div className="details">
             <h1>{movie.title}</h1>
+            <p>⭐ {movie.vote_average}</p>
             <p>Release date: {movie.release_date}</p>
             <p>{movie.overview}</p>
           </div>

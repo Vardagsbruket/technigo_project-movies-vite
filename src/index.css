@@ -123,3 +123,13 @@ nav ul {
   align-content: center;
   justify-content: center;
 }
+select {
+  height: 30px;
+  font-size: 15px;
+  border: none;
+  background-color: white;
+}
+label {
+  height: 30px;
+  font-size: 15px;
+}
