@@ -12,7 +12,7 @@ export const ListMovies = ({ movieList }) => {
           onMouseEnter={() => setHoveredMovie(movie.id)}
           onMouseLeave={() => setHoveredMovie(null)}
         >
-          <Link to={`/${movie.id}`} className="movie-link">
+          <Link to={`/movie/${movie.id}`} className="movie-link">
             <div className="movie-container">
               <img
                 src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}

@@ -7,7 +7,7 @@ export const routes = (
   <>
     <Route path="/" element={<Home />} />
     <Route path="*" element={<ErrorPage />} />
-    <Route path="/:movieId" element={<InfoMovie />} />
+    <Route path="/movie/:movieId" element={<InfoMovie />} />
   </>
 );
 

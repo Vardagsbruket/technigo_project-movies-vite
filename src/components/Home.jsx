@@ -35,9 +35,10 @@ export const Home = () => {
           break;
       }
       const response = await fetch(apiUrl);
+      console.log(response);
       const data = await response.json();
       setMovieList(data.results);
-      console.log(data);
+      //console.log(data);
       setIsLoading(false);
     };
 
