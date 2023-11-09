@@ -6,7 +6,6 @@ export const App = () => {
   return (
     <>
       <BrowserRouter>
-        <NavBar />
         <Routes>{routes}</Routes>
       </BrowserRouter>
     </>

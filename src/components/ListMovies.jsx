@@ -15,7 +15,7 @@ export const ListMovies = ({ movieList }) => {
           <Link to={`/${movie.id}`} className="movie-link">
             <div className="movie-container">
               <img
-                src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
                 alt="Movie poster"
               />
               {hoveredMovie === movie.id && (

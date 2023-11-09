@@ -7,7 +7,7 @@ export const NavBar = () => {
         <ul>
           <li>
             <NavLink to="/" className="navBar">
-              Home
+              ◀️ Back to Movies
             </NavLink>
           </li>
         </ul>
