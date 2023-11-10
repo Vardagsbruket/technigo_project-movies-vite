@@ -4,7 +4,7 @@ import { ListMovies } from "./ListMovies";
 export const Home = () => {
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const APIKey = "1e81568b63357a1819899eca74697016";
+  const APIKey = import.meta.env.VITE_OPENDB_KEY;
 
   //Get todays date in "YYYY-MM-DD" format
   const todaysDate = new Date();
