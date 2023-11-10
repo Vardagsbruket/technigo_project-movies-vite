@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, Outlet, useNavigate, useParams } from "react-router-dom";
 import { NavBar } from "./NavBar";
 
 export const InfoMovie = () => {
   const { movieId } = useParams();
-  const APIKey = "1e81568b63357a1819899eca74697016";
+  const [currentMovie, setCurrentMovie] = React.useState([]);
+  const APIKey = import.meta.env.VITE_OPENDB_KEY;
   //console.log(movieId);
   const [movie, setMovie] = useState({});
   const API = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${APIKey}&language=en-US`;
@@ -23,6 +24,7 @@ export const InfoMovie = () => {
     //console.log(JSON.stringify(data, null, 2));
     // setMovie(data.results);
     setMovie(data);
+    setCurrentMovie(data);
     //console.log(data);
   };
 
@@ -47,8 +49,14 @@ export const InfoMovie = () => {
             <p>⭐ {movie.vote_average}</p>
             <p>Release date: {movie.release_date}</p>
             <p>{movie.overview}</p>
+            <div>
+              <NavLink to={`/movie/${movie.id}/learnmore`}>
+                <button>Learn More</button>
+              </NavLink>
+            </div>
           </div>
         </div>
+        <Outlet context={[currentMovie]} />
       </div>
     </>
   );
