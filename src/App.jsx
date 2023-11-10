@@ -1,13 +1,21 @@
-import { BrowserRouter, Routes } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
-import routes from "./routes/routes";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Home } from "./components/Home";
+import { ErrorPage } from "./components/ErrorPage";
+import { InfoMovie } from "./components/InfoMovie";
+import { LearnMore } from "./pages/LearnMore";
 
 export const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Routes>{routes}</Routes>
-      </BrowserRouter>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<ErrorPage />} />
+          <Route path="/movie/:movieId" element={<InfoMovie />}>
+            <Route path="/movie/:movieId/learnmore" element={<LearnMore />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 };
