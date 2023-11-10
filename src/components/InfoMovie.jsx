@@ -34,7 +34,8 @@ export const InfoMovie = () => {
 
   const backdropIMG = `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`;
   const posterIMG = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
-
+  const rating = movie.vote_average;
+  const roundedRating = rating.toFixed(1);
   return (
     <>
       <NavBar />

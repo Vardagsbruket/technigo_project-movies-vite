@@ -1,9 +1,4 @@
-import {
-  NavLink,
-  useNavigate,
-  useOutletContext,
-  useParams,
-} from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export const LearnMore = () => {
   const [currentMovie] = useOutletContext();

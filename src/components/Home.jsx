@@ -52,26 +52,24 @@ export const Home = () => {
   }, [selectedMovieList]);
 
   return (
-    <>
-      <div className="dropdown">
-        <label htmlFor={selectedMovieList}>
-          Which movies do you want to see?
-        </label>
-        <select value={selectedMovieList} onChange={selectMovieList}>
-          <option value="">Select Movie List</option>
-          <option value="Upcoming">Upcoming Movies</option>
-          <option value="Popular">Popular Movies</option>
-          <option value="Top-rated">Top Rated Movies</option>
-        </select>
-      </div>
-      <div>
+    <div className="mainContainer">
+      <div className="header">
         <h1>
           {selectedMovieList ? `${selectedMovieList} Movies` : "Popular Movies"}
         </h1>
+        <div className="dropdown">
+          <label htmlFor={selectedMovieList}>Select movie list</label>
+          <select value={selectedMovieList} onChange={selectMovieList}>
+            <option value="Popular">Popular Movies</option>
+            <option value="Upcoming">Upcoming Movies</option>
+            <option value="Top-rated">Top Rated Movies</option>
+          </select>
+        </div>
       </div>
+
       <div className="containerListMovies">
         {isLoading ? <p>Loading...</p> : <ListMovies movieList={movieList} />}
       </div>
-    </>
+    </div>
   );
 };

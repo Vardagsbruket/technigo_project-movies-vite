@@ -22,24 +22,38 @@ html {
   height: 100%;
 }
 body {
-  background-color: black;
   color: white;
   text-align: center;
+  font-family: "Work Sans", sans-serif;
+  background-color: rgba(15, 14, 36, 0.616);
 }
 h1 {
   margin-top: 20px;
   margin-bottom: 20px;
+  font-size: 60px;
+  filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
+}
+.mainContainer {
+  margin: auto;
+}
+img {
+  border-radius: 6px;
+  filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
 }
 .containerListMovies {
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
   margin: 5px;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
 }
 .movie-container {
   position: relative;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
 }
 
 .additionalInfo {
@@ -78,11 +92,12 @@ h1 {
   padding: 50px;
 }
 .learnMore-container a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: white;
 }
 button {
   height: 30px;
-  width: 80px;
+  width: 100px;
   background-color: black;
   color: white;
   border: none;
@@ -146,18 +161,20 @@ nav ul {
 }
 .dropdown {
   display: flex;
-  margin-top: 10px;
+  margin: 10px;
   gap: 10px;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 select {
   height: 30px;
   font-size: 15px;
+  width: auto;
   border: none;
   background-color: white;
+  align-self: center;
+  border-radius: 6px;
 }
 label {
-  height: 30px;
   font-size: 15px;
 }
