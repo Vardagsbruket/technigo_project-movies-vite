@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const ListMovies = ({ movieList }) => {
   const [hoveredMovie, setHoveredMovie] = useState(null);
@@ -12,7 +12,7 @@ export const ListMovies = ({ movieList }) => {
           onMouseEnter={() => setHoveredMovie(movie.id)}
           onMouseLeave={() => setHoveredMovie(null)}
         >
-          <Link to={`/movie/${movie.id}`} className="movie-link">
+          <NavLink to={`/movie/${movie.id}`} className="movie-link">
             <div className="movie-container">
               <img
                 src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
@@ -25,7 +25,7 @@ export const ListMovies = ({ movieList }) => {
                 </div>
               )}
             </div>
-          </Link>
+          </NavLink>
         </div>
       ))}
     </>

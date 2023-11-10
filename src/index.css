@@ -36,6 +36,9 @@ h1 {
 .mainContainer {
   margin: auto;
 }
+.learnMore .active {
+  display: none;
+}
 img {
   border-radius: 6px;
   filter: drop-shadow(2px 3px 4px rgb(0 0 0/0.5));
@@ -89,7 +92,6 @@ img {
   flex-direction: column;
   gap: 10px;
   text-align: left;
-  padding: 50px;
 }
 .learnMore-container a {
   text-decoration: underline;
