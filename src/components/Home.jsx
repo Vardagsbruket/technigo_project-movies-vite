@@ -6,11 +6,17 @@ export const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const APIKey = "1e81568b63357a1819899eca74697016";
 
-  const min_date = "2012-11-15";
-  const max_date = "2013-12-31";
+  //Get todays date in "YYYY-MM-DD" format
+  const todaysDate = new Date();
+  const min_date = todaysDate.toISOString().split("T")[0];
 
+  //Get the date one month from today in "YYYY-MM-DD" format
+  const nextMonth = new Date();
+  nextMonth.setMonth(todaysDate.getMonth() + 1);
+  const max_date = nextMonth.toISOString().split("T")[0];
+
+  //Get input from dropdown menu to make the corresponding api call
   const [selectedMovieList, setSelectedMovieList] = useState("");
-
   const selectMovieList = (e) => {
     const selectedValue = e.target.value;
     setSelectedMovieList(selectedValue);
@@ -35,7 +41,7 @@ export const Home = () => {
           break;
       }
       const response = await fetch(apiUrl);
-      console.log(response);
+      //console.log(response);
       const data = await response.json();
       setMovieList(data.results);
       //console.log(data);
@@ -59,7 +65,9 @@ export const Home = () => {
         </select>
       </div>
       <div>
-        <h1>{selectedMovieList ? `${selectedMovieList} Movies` : "Movies"}</h1>
+        <h1>
+          {selectedMovieList ? `${selectedMovieList} Movies` : "Popular Movies"}
+        </h1>
       </div>
       <div className="containerListMovies">
         {isLoading ? <p>Loading...</p> : <ListMovies movieList={movieList} />}

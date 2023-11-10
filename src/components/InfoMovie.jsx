@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { NavBar } from "./NavBar";
-import { ErrorPage } from "./ErrorPage";
 
 export const InfoMovie = () => {
   const { movieId } = useParams();
@@ -17,6 +16,8 @@ export const InfoMovie = () => {
     //console.log(response);
     const data = await response.json();
     console.log(data);
+
+    //If the user gets a 404 error code, then navigate to /404
     if (data.status_code === 34) navigate("/404");
 
     //console.log(JSON.stringify(data, null, 2));
