@@ -1,5 +1,4 @@
-import { Link, Routes } from "react-router-dom";
-import { routes } from "../routes/routes";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   return (
@@ -7,14 +6,12 @@ export const NavBar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" className="navBar">
+              ◀️ Back to Movies
+            </NavLink>
           </li>
         </ul>
       </nav>
-
-      <main>
-        <Routes>{routes}</Routes>
-      </main>
     </>
   );
 };
