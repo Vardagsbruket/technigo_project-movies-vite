@@ -67,7 +67,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="containerListMovies">
+      <div className="containerAllMovies">
         {isLoading ? <p>Loading...</p> : <ListMovies movieList={movieList} />}
       </div>
     </div>
