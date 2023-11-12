@@ -55,7 +55,14 @@ export const InfoMovie = () => {
               className="infoPoster"
             />
             <div className="details">
-              <h1>{movie.title}</h1>
+              <div className="tabletHeader">
+                <h1>{movie.title}</h1>
+                <img
+                  src={posterIMG}
+                  alt="Poster for movie"
+                  className="tablet"
+                />
+              </div>
               <p>⭐ {roundedRating}</p>
               <p>Release date: {movie.release_date}</p>
               <p>{movie.overview}</p>
